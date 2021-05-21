@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="{% url 'SCM:SCM-list' %}">Go back to previous page</a>
+    <hr />
+    <h1>Assign an agent to this lead</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="w-full bg-blue-500 text-white hover:bg-blue-600 px-3 py-1 rounded-md">Submit</button>
+    </form>
+{% endblock content %}
